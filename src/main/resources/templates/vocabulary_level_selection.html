@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chọn Cấp Độ - English Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#8b5cf6",
+              accent: "#06b6d4",
+              success: "#10b981",
+              warning: "#f59e0b",
+              danger: "#ef4444",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      .level-a1 {
+        background: linear-gradient(135deg, #ef4444 0%, #fca5a5 100%);
+      }
+      .level-a2 {
+        background: linear-gradient(135deg, #f97316 0%, #fdba74 100%);
+      }
+      .level-b1 {
+        background: linear-gradient(135deg, #22c55e 0%, #86efac 100%);
+      }
+      .level-b2 {
+        background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <!-- Header -->
+      <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-6">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-lg">EH</span>
+              </div>
+              <h1 class="text-2xl font-bold text-gray-900">English Hub</h1>
+            </div>
+            <a
+              href="/dashboard"
+              class="text-blue-600 hover:text-blue-700 flex items-center space-x-2"
+            >
+              <span>← Về Dashboard</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="max-w-4xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            📚 Chọn Cấp Độ Từ Vựng
+          </h2>
+          <p class="text-xl text-gray-600">
+            Chọn cấp độ phù hợp với trình độ của bạn để bắt đầu học từ vựng
+          </p>
+        </div>
+
+        <!-- Level Selection Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- A1 Level -->
+          <div
+            class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100 cursor-pointer"
+            onclick="selectLevel('A1')"
+          >
+            <div
+              class="level-a1 w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <span class="text-3xl text-white font-bold">A1</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Cơ Bản - A1</h3>
+            <p class="text-gray-600 mb-6">
+              Phù hợp cho người mới bắt đầu học tiếng Anh. Các từ vựng cơ bản
+              trong cuộc sống hàng ngày.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="text-sm text-red-600 font-semibold">Cơ bản</span>
+              </div>
+              <div
+                class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-red-600 text-xl">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A2 Level -->
+          <div
+            class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100 cursor-pointer"
+            onclick="selectLevel('A2')"
+          >
+            <div
+              class="level-a2 w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <span class="text-3xl text-white font-bold">A2</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Sơ Cấp - A2</h3>
+            <p class="text-gray-600 mb-6">
+              Dành cho người đã có kiến thức cơ bản. Từ vựng về công việc, sở
+              thích và hoạt động thường ngày.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
+                <span class="text-sm text-orange-600 font-semibold"
+                  >Sơ cấp</span
+                >
+              </div>
+              <div
+                class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-orange-600 text-xl">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- B1 Level -->
+          <div
+            class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100 cursor-pointer"
+            onclick="selectLevel('B1')"
+          >
+            <div
+              class="level-b1 w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <span class="text-3xl text-white font-bold">B1</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Trung Cấp - B1
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Cho người có trình độ trung bình. Từ vựng về giáo dục, du lịch và
+              các chủ đề xã hội.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-sm text-green-600 font-semibold"
+                  >Trung cấp</span
+                >
+              </div>
+              <div
+                class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-green-600 text-xl">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- B2 Level -->
+          <div
+            class="card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100 cursor-pointer"
+            onclick="selectLevel('B2')"
+          >
+            <div
+              class="level-b2 w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <span class="text-3xl text-white font-bold">B2</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Trung Cao - B2
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Dành cho người có trình độ khá. Từ vựng học thuật, kinh doanh và
+              các chủ đề phức tạp.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                <span class="text-sm text-blue-600 font-semibold"
+                  >Trung cao</span
+                >
+              </div>
+              <div
+                class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-blue-600 text-xl">→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div
+      id="loadingModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-2xl p-8 text-center max-w-md mx-4">
+        <div
+          class="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"
+        ></div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          Đang tải từ vựng...
+        </h3>
+        <p class="text-gray-600">Vui lòng chờ trong giây lát</p>
+      </div>
+    </div>
+
+    <script>
+      function selectLevel(level) {
+        // Hiển thị loading modal
+        document.getElementById("loadingModal").classList.remove("hidden");
+        document.getElementById("loadingModal").classList.add("flex");
+
+        // Chuyển hướng đến trang vocabulary với level được chọn
+        setTimeout(() => {
+          window.location.href = `/vocabulary?level=${level}`;
+        }, 1000); // Delay 1 giây để user thấy loading
+      }
+    </script>
+  </body>
+</html>

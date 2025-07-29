@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Học từ vựng theo cấp độ</title>
+    <style>
+        body { font-family: sans-serif; background: #f5f5f5; padding: 20px; }
+        h1 { text-align: center; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .A1 { border-left: 6px solid #ef4444; } /* đỏ */
+        .A2 { border-left: 6px solid #f97316; } /* cam */
+        .B1 { border-left: 6px solid #22c55e; } /* xanh lá */
+        .B2 { border-left: 6px solid #3b82f6; } /* xanh dương */
+    </style>
+</head>
+<body>
+    <h1>📚 30 Từ Vựng Theo Cấp Độ</h1>
+    <div class="grid" id="vocab-list"></div>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8080/socket/learn");
+
+        socket.onopen = () => {
+            console.log("🟢 WebSocket connected");
+        };
+
+        socket.onmessage = (event) => {
+            const words = JSON.parse(event.data);
+            const list = document.getElementById("vocab-list");
+            list.innerHTML = "";
+
+            words.forEach(w => {
+                const div = document.createElement("div");
+                div.className = `card ${w.level}`;
+                div.innerHTML = `
+                    <h3>${w.word}</h3>
+                    <p><i>${w.phonetic}</i></p>
+                    <p>${w.meaning}</p>
+                    <small><strong>Cấp độ:</strong> ${w.level}</small>
+                `;
+                list.appendChild(div);
+            });
+        };
+
+        socket.onerror = (err) => {
+            console.error("❌ Lỗi WebSocket:", err);
+        };
+
+        socket.onclose = () => {
+            console.warn("🔌 WebSocket đã đóng");
+        };
+    </script>
+</body>
+</html>

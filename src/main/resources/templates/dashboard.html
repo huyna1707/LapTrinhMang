@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Learning Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#8b5cf6",
+              accent: "#06b6d4",
+              success: "#10b981",
+              warning: "#f59e0b",
+              danger: "#ef4444",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <div class="flex h-screen">
+      <!-- Left Sidebar -->
+      <div class="w-64 gradient-bg text-white shadow-2xl">
+        <div class="p-6">
+          <div class="flex items-center space-x-3 mb-8">
+            <div
+              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center"
+            >
+              <img src="/assets/img/logo.png" alt="Logo" />
+            </div>
+            <h1 class="text-xl font-bold">English Hub</h1>
+          </div>
+
+          <nav class="space-y-2">
+            <a
+              href="#"
+              class="flex items-center space-x-3 p-3 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all"
+            >
+              <span class="text-lg">🏠</span>
+              <span>Dashboard</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              <span class="text-lg">📊</span>
+              <span>Tiến độ</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              <span class="text-lg">🎯</span>
+              <span>Mục tiêu</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              <span class="text-lg">⭐</span>
+              <span>Thành tích</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all"
+            >
+              <span class="text-lg">⚙️</span>
+              <span>Cài đặt</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="absolute bottom-6 left-6 right-6">
+          <div class="bg-white bg-opacity-20 rounded-lg p-4">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+              >
+                <span class="text-lg">👤</span>
+              </div>
+              <div>
+                <p class="font-semibold">Học viên</p>
+                <p class="text-sm opacity-80">Level: Intermediate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="flex-1 flex flex-col">
+        <!-- Top Navbar -->
+        <nav class="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800">Dashboard</h2>
+              <p class="text-gray-600">
+                Chào mừng bạn quay trở lại! Hãy tiếp tục hành trình học tiếng
+                Anh.
+              </p>
+            </div>
+            <div class="flex items-center space-x-4">
+              <button
+                class="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <span class="text-xl">🔔</span>
+              </button>
+              <button
+                class="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <span class="text-xl">🌙</span>
+              </button>
+              <div
+                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-semibold"
+              >
+                A
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 overflow-auto">
+          <div class="max-w-6xl mx-auto">
+            <!-- Welcome Section -->
+            <div class="mb-8">
+              <div
+                class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white"
+              >
+                <h3 class="text-2xl font-bold mb-2">
+                  Học tiếng Anh hiệu quả mỗi ngày! 🚀
+                </h3>
+                <p class="opacity-90">
+                  Chọn một trong các kỹ năng bên dưới để bắt đầu học ngay hôm
+                  nay.
+                </p>
+              </div>
+            </div>
+
+            <!-- Learning Options Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <!-- Vocabulary Card -->
+              <a href="/vocabulary-level">
+                <div
+                  class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100 cursor-pointer"
+                  onclick="selectOption('vocabulary')"
+                >
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4"
+                  >
+                    <span class="text-2xl text-white">📝</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                    Vocabulary
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Mở rộng vốn từ vựng với các bài học thú vị và bài tập tương
+                    tác.
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-blue-600 font-semibold"
+                      >120+ từ mới</span
+                    >
+                    <div
+                      class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-blue-600">→</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- Reading Card -->
+              <div
+                class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100 cursor-pointer"
+                onclick="selectOption('reading')"
+              >
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <span class="text-2xl text-white">📖</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Reading</h3>
+                <p class="text-gray-600 mb-4">
+                  Nâng cao kỹ năng đọc hiểu qua các bài đọc đa dạng và hấp dẫn.
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-green-600 font-semibold"
+                    >50+ bài đọc</span
+                  >
+                  <div
+                    class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
+                  >
+                    <span class="text-green-600">→</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Translate Card -->
+              <div
+                class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100 cursor-pointer"
+                onclick="selectOption('translate')"
+              >
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <span class="text-2xl text-white">🔄</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Translate</h3>
+                <p class="text-gray-600 mb-4">
+                  Luyện tập dịch thuật từ cơ bản đến nâng cao với AI hỗ trợ.
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-purple-600 font-semibold"
+                    >AI Assistant</span
+                  >
+                  <div
+                    class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center"
+                  >
+                    <span class="text-purple-600">→</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grammar Card -->
+              <div
+                class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100 cursor-pointer"
+                onclick="selectOption('grammar')"
+              >
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4"
+                >
+                  <span class="text-2xl text-white">⚡</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Grammar</h3>
+                <p class="text-gray-600 mb-4">
+                  Nắm vững ngữ pháp với các bài giảng chi tiết và bài tập thực
+                  hành.
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-orange-600 font-semibold"
+                    >30+ chủ đề</span
+                  >
+                  <div
+                    class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center"
+                  >
+                    <span class="text-orange-600">→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-gray-600 text-sm">Streak hiện tại</p>
+                    <p class="text-2xl font-bold text-gray-800">7 ngày</p>
+                  </div>
+                  <div class="text-3xl">🔥</div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-gray-600 text-sm">Điểm tích lũy</p>
+                    <p class="text-2xl font-bold text-gray-800">2,450</p>
+                  </div>
+                  <div class="text-3xl">⭐</div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-gray-600 text-sm">Thời gian học</p>
+                    <p class="text-2xl font-bold text-gray-800">45 phút</p>
+                  </div>
+                  <div class="text-3xl">⏰</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function selectOption(option) {
+        // Add visual feedback
+        event.currentTarget.style.transform = "scale(0.95)";
+        setTimeout(() => {
+          event.currentTarget.style.transform = "translateY(-8px)";
+        }, 150);
+
+        // Show selection message
+        const messages = {
+          vocabulary: "Bắt đầu học từ vựng! 📝",
+          reading: "Khám phá thế giới qua đọc hiểu! 📖",
+          translate: "Luyện tập dịch thuật với AI! 🔄",
+          grammar: "Chinh phục ngữ pháp! ⚡",
+        };
+
+        // Create notification
+        const notification = document.createElement("div");
+        notification.className =
+          "fixed top-4 right-4 bg-white border-l-4 border-green-500 rounded-lg shadow-lg p-4 z-50 transform translate-x-full transition-transform duration-300";
+        notification.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <div class="text-green-500 text-xl">✅</div>
+                    <div>
+                        <p class="font-semibold text-gray-800">${messages[option]}</p>
+                        <p class="text-sm text-gray-600">Đang chuẩn bị bài học cho bạn...</p>
+                    </div>
+                </div>
+            `;
+
+        document.body.appendChild(notification);
+
+        // Animate notification
+        setTimeout(() => {
+          notification.style.transform = "translateX(0)";
+        }, 100);
+
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+          notification.style.transform = "translateX(full)";
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 300);
+        }, 3000);
+      }
+
+      // Add smooth scrolling and responsive behavior
+      window.addEventListener("resize", function () {
+        // Handle responsive layout adjustments if needed
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'966bf35dd3a30a9d',t:'MTc1Mzc4NTEyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
